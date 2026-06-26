@@ -1,0 +1,16 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Kartuzov;Igor;;;
+FN:Igor Kartuzov
+ORG:SeedWave
+TITLE:Founder & Architect — AI-first digital studio
+TEL;TYPE=CELL,VOICE:+351912916273
+EMAIL;TYPE=INTERNET:i.kartuzov@gmail.com
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/igor-kartuzov/
+URL;TYPE=WhatsApp:https://wa.me/351912916273
+URL;TYPE=Telegram:https://t.me/igor_kartuzov
+URL;TYPE=SeedWave Hub:https://ikartuzov-hub.github.io/seedwave-catalog/hub/
+URL;TYPE=Treino:https://ikartuzov-hub.github.io/treino/intro.html
+URL;TYPE=Birdie:https://ikartuzov-hub.github.io/birdie/intro.html
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/igor-kartuzov/
+END:VCARD

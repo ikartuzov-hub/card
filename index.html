@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Igor Kartuzov · SeedWave</title>
+<meta name="description" content="Igor Kartuzov — Founder & Architect, SeedWave. Сохрани контакт и загляни в экосистему.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="theme-color" content="#07232b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ---------- SeedWave tokens ---------- */
+:root{
+  --bg:#07232b; --bg2:#0c2f38; --surface:#0e353f;
+  --ink:#eaf6f8; --muted:#a4c6cd;
+  --accent:#19a8c4; --accent-ink:#04161b;
+  --line:rgba(255,255,255,.10);
+  --shadow:0 18px 50px -22px rgba(0,0,0,.7);
+}
+:root[data-theme="light"]{
+  --bg:#eef7f9; --bg2:#e2f0f3; --surface:#ffffff;
+  --ink:#07232b; --muted:#46666e;
+  --accent:#0E8FA8; --accent-ink:#ffffff;
+  --line:rgba(7,35,43,.12);
+  --shadow:0 16px 40px -24px rgba(14,79,95,.5);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:radial-gradient(120% 80% at 50% -10%, var(--bg2), var(--bg) 60%);
+  color:var(--ink);
+  font-family:"Inter",system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  min-height:100dvh;
+  padding:max(20px,env(safe-area-inset-top)) 18px calc(28px + env(safe-area-inset-bottom));
+  display:flex;flex-direction:column;align-items:center;
+}
+
+/* ---------- top bar ---------- */
+.brandmark{position:fixed;top:14px;left:16px;width:26px;height:26px;z-index:5}
+.brandmark svg{width:100%;height:100%}
+.topctrl{position:fixed;top:12px;right:14px;z-index:6;display:flex;align-items:center;gap:8px}
+.circ{
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  font-size:16px;cursor:pointer;display:grid;place-items:center;
+  transition:transform .2s ease;
+}
+.circ:active{transform:scale(.92)}
+#langBtn{font-family:"Space Grotesk",sans-serif;font-size:13px;font-weight:600;letter-spacing:.03em}
+
+/* язык — выпадающий выбор из одной кнопки */
+.langpop{
+  position:fixed;top:58px;right:14px;z-index:7;
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:6px;min-width:150px;
+  display:none;flex-direction:column;gap:2px;
+}
+.langpop.open{display:flex}
+.langpop button{
+  display:flex;align-items:center;gap:10px;
+  font-family:"Inter",sans-serif;font-size:14px;font-weight:500;
+  padding:9px 11px;border-radius:9px;cursor:pointer;text-align:left;
+  background:transparent;color:var(--ink);border:none;transition:background .12s ease;
+}
+.langpop button:hover{background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.langpop button .code{font-family:"Space Grotesk",sans-serif;font-weight:600;font-size:11px;
+  letter-spacing:.05em;color:var(--muted);min-width:20px}
+.langpop button[aria-current="true"]{color:var(--accent)}
+.langpop button[aria-current="true"] .code{color:var(--accent)}
+
+/* ---------- card ---------- */
+.card{width:100%;max-width:430px;margin:0 auto}
+
+.hero{text-align:center;padding:44px 6px 8px;position:relative}
+.avatar{
+  width:124px;height:124px;margin:0 auto 18px;border-radius:50%;
+  padding:4px;background:linear-gradient(150deg,var(--accent),color-mix(in srgb,var(--accent) 30%,transparent));
+  box-shadow:var(--shadow);
+  animation:rise .9s cubic-bezier(.2,.7,.2,1) both;
+}
+.avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
+  border:3px solid var(--bg)}
+.eyebrow{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 10px;
+  animation:rise .9s .05s cubic-bezier(.2,.7,.2,1) both;
+}
+h1{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:clamp(34px,9vw,42px);font-weight:700;line-height:1.02;
+  margin:0 0 12px;letter-spacing:-.02em;
+  animation:rise .9s .1s cubic-bezier(.2,.7,.2,1) both;
+}
+.role{
+  font-size:15px;color:var(--muted);max-width:300px;margin:0 auto;line-height:1.45;
+  animation:rise .9s .15s cubic-bezier(.2,.7,.2,1) both;
+}
+
+/* ---------- primary action ---------- */
+.save{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;margin:24px 0 8px;padding:17px 20px;
+  background:var(--accent);color:var(--accent-ink);
+  border:none;border-radius:16px;cursor:pointer;
+  font-family:"Space Grotesk",sans-serif;font-size:16px;font-weight:600;
+  box-shadow:var(--shadow);transition:transform .18s ease,filter .18s ease;
+}
+.save:hover{filter:brightness(1.05)}
+.save:active{transform:scale(.985)}
+.save svg{width:19px;height:19px;flex:0 0 auto}
+.hint{text-align:center;font-size:12.5px;color:var(--muted);margin:0 0 22px}
+
+/* ---------- contact rows ---------- */
+.group-label{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);margin:22px 4px 10px;
+}
+.rows{display:flex;flex-direction:column;gap:9px}
+.row{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 16px;border-radius:14px;
+  background:var(--surface);border:1px solid var(--line);
+  color:var(--ink);text-decoration:none;
+  transition:transform .15s ease,border-color .15s ease;
+}
+.row:active{transform:scale(.99)}
+.row:hover{border-color:var(--accent)}
+.ic{
+  flex:0 0 38px;width:38px;height:38px;border-radius:11px;
+  display:grid;place-items:center;
+  background:color-mix(in srgb,var(--accent) 16%,transparent);
+  color:var(--accent);
+}
+.ic svg{width:19px;height:19px;display:block}
+.rt{display:flex;flex-direction:column;min-width:0;flex:1}
+.rt .k{font-size:12px;color:var(--muted);letter-spacing:.02em}
+.rt .v{font-size:15px;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chev{color:var(--muted);flex:0 0 auto}
+.chev svg{width:16px;height:16px;display:block}
+
+/* ---------- footer ---------- */
+footer{
+  margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+  text-align:center;font-size:13px;color:var(--muted);
+}
+footer a{color:var(--ink);text-decoration:none;font-weight:600}
+footer a:hover{color:var(--accent)}
+
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .avatar,.eyebrow,h1,.role{animation:none}
+}
+</style>
+</head>
+<body>
+
+<!-- brandmark: S + волна → Hub -->
+<a class="brandmark" data-eco="https://ikartuzov-hub.github.io/seedwave-catalog/hub/" href="https://ikartuzov-hub.github.io/seedwave-catalog/hub/" aria-label="SeedWave Hub">
+  <svg viewBox="0 0 100 100" fill="none" stroke="var(--accent)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M67 31 C67 20 45 18 38 27 C31 36 42 44 51 47 C62 51 69 55 66 65 C63 76 42 78 34 69"/>
+    <path d="M20 86 Q30 80 40 86 Q50 92 60 86 Q70 80 80 86"/>
+  </svg>
+</a>
+<div class="topctrl">
+  <button id="langBtn" class="circ" aria-label="Язык" aria-haspopup="true" aria-expanded="false">RU</button>
+  <button id="themeBtn" class="circ" aria-label="Сменить тему">☾</button>
+</div>
+<div class="langpop" id="langpop" role="menu" aria-label="Выбор языка">
+  <button data-lang="ru" role="menuitem"><span class="code">RU</span>Русский</button>
+  <button data-lang="en" role="menuitem"><span class="code">EN</span>English</button>
+  <button data-lang="pt" role="menuitem"><span class="code">PT</span>Português</button>
+  <button data-lang="es" role="menuitem"><span class="code">ES</span>Español</button>
+  <button data-lang="de" role="menuitem"><span class="code">DE</span>Deutsch</button>
+</div>
+
+<main class="card">
+
+  <section class="hero">
+    <div class="avatar">
+      <img src="photo.jpg" alt="Igor Kartuzov" width="124" height="124">
+    </div>
+    <p class="eyebrow">SeedWave · AI-first digital studio</p>
+    <h1>Igor Kartuzov</h1>
+    <p class="role" data-i18n="role">Founder &amp; Architect — собираю лёгкие цифровые продукты на уникальных движках</p>
+  </section>
+
+  <button class="save" id="saveBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
+    <span data-i18n="save">Сохранить контакт</span>
+  </button>
+  <p class="hint" data-i18n="hint">Добавит карточку со всеми ссылками сразу — iPhone и Android</p>
+
+  <p class="group-label" data-i18n="g_contact">Связаться</p>
+  <div class="rows">
+    <a class="row" href="https://wa.me/351912916273">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.95.51 3.78 1.41 5.37L2 22l4.86-1.27a9.9 9.9 0 0 0 5.18 1.43c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm0 18.1c-1.6 0-3.16-.43-4.52-1.25l-.32-.19-3 .79.8-2.93-.21-.34a8.2 8.2 0 0 1-1.26-4.37c0-4.54 3.7-8.23 8.24-8.23 4.54 0 8.23 3.69 8.23 8.23 0 4.54-3.69 8.24-8.23 8.24zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg></span>
+      <span class="rt"><span class="k">WhatsApp</span><span class="v">+351 912 916 273</span></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+    <a class="row" href="https://t.me/igor_kartuzov">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.6 18.6 20.3c-.25 1.1-.91 1.37-1.85.86l-5.1-3.76-2.46 2.37c-.27.27-.5.5-1.03.5l.37-5.2 9.47-8.56c.41-.37-.09-.57-.64-.2L5.12 13.1l-5.04-1.58c-1.1-.34-1.12-1.1.23-1.62l19.7-7.6c.91-.34 1.71.2 1.43 1.6-.17.84-.5.7-.5.7z"/></svg></span>
+      <span class="rt"><span class="k">Telegram</span><span class="v">@igor_kartuzov</span></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+    <a class="row" href="tel:+351912916273">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+      <span class="rt"><span class="k" data-i18n="r_call">Позвонить</span><span class="v">+351 912 916 273</span></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+    <a class="row" href="mailto:i.kartuzov@gmail.com">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+      <span class="rt"><span class="k" data-i18n="r_email">Почта</span><span class="v">i.kartuzov@gmail.com</span></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+    <a class="row" href="https://www.linkedin.com/in/igor-kartuzov/">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.85V21h-4z"/></svg></span>
+      <span class="rt"><span class="k">LinkedIn</span><span class="v">in/igor-kartuzov</span></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+    </a>
+  </div>
+
+  <p class="group-label" data-i18n="g_projects">Проекты студии</p>
+  <div class="rows">
+    <a class="row" data-eco="https://ikartuzov-hub.github.io/seedwave-catalog/hub/" href="https://ikartuzov-hub.github.io/seedwave-catalog/hub/">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></span>
+      <span class="rt"><span class="k">SeedWave Hub</span><span class="v" data-i18n="hub_d">Витрина всех проектов</span></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+    </a>
+    <a class="row" data-eco="https://ikartuzov-hub.github.io/treino/intro.html" href="https://ikartuzov-hub.github.io/treino/intro.html">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
+      <span class="rt"><span class="k">Treino</span><span class="v" data-i18n="treino_d">Языковой тренажёр · демо</span></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+    </a>
+    <a class="row" data-eco="https://ikartuzov-hub.github.io/birdie/intro.html" href="https://ikartuzov-hub.github.io/birdie/intro.html">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg></span>
+      <span class="rt"><span class="k">Birdie</span><span class="v" data-i18n="birdie_d">Тренировки по гольфу · демо</span></span>
+      <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></span>
+    </a>
+  </div>
+
+  <footer>
+    © <a href="https://www.linkedin.com/in/igor-kartuzov/">Igor Kartuzov</a> ·
+    <a data-eco="https://ikartuzov-hub.github.io/seedwave-catalog/hub/" href="https://ikartuzov-hub.github.io/seedwave-catalog/hub/">SeedWave</a>
+  </footer>
+
+</main>
+
+<script>
+const root=document.documentElement;
+
+/* ---------- i18n (Слой 2: локали интерфейса) ---------- */
+const LANGS=["ru","en","pt","es","de"];
+const LOCALES={
+  ru:{role:"Founder & Architect — собираю лёгкие цифровые продукты на уникальных движках",
+      save:"Сохранить контакт", hint:"Добавит карточку со всеми ссылками сразу — iPhone и Android",
+      g_contact:"Связаться", g_projects:"Проекты студии", r_call:"Позвонить", r_email:"Почта",
+      hub_d:"Витрина всех проектов", treino_d:"Языковой тренажёр · демо", birdie_d:"Тренировки по гольфу · демо"},
+  en:{role:"Founder & Architect — building light digital products on unique engines",
+      save:"Save contact", hint:"Adds the full card with every link — iPhone and Android",
+      g_contact:"Contact", g_projects:"Studio projects", r_call:"Call", r_email:"Email",
+      hub_d:"Showcase of all projects", treino_d:"Language trainer · demo", birdie_d:"Golf practice · demo"},
+  pt:{role:"Founder & Architect — crio produtos digitais leves sobre motores únicos",
+      save:"Guardar contacto", hint:"Adiciona o cartão completo com todos os links — iPhone e Android",
+      g_contact:"Contactar", g_projects:"Projetos do estúdio", r_call:"Ligar", r_email:"Email",
+      hub_d:"Vitrine de todos os projetos", treino_d:"Treinador de línguas · demo", birdie_d:"Treino de golfe · demo"},
+  es:{role:"Founder & Architect — creo productos digitales ligeros sobre motores únicos",
+      save:"Guardar contacto", hint:"Añade la tarjeta completa con todos los enlaces — iPhone y Android",
+      g_contact:"Contacto", g_projects:"Proyectos del estudio", r_call:"Llamar", r_email:"Correo",
+      hub_d:"Escaparate de todos los proyectos", treino_d:"Entrenador de idiomas · demo", birdie_d:"Entrenamiento de golf · demo"},
+  de:{role:"Founder & Architect — ich baue leichte digitale Produkte auf einzigartigen Engines",
+      save:"Kontakt speichern", hint:"Fügt die ganze Karte mit allen Links hinzu — iPhone und Android",
+      g_contact:"Kontakt", g_projects:"Studio-Projekte", r_call:"Anrufen", r_email:"E-Mail",
+      hub_d:"Schaufenster aller Projekte", treino_d:"Sprachtrainer · Demo", birdie_d:"Golf-Training · Demo"}
+};
+const langBtn=document.getElementById('langBtn'), langpop=document.getElementById('langpop');
+function applyLang(lang){
+  const d=LOCALES[lang]||LOCALES.ru;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n; if(d[k]!=null) el.textContent=d[k];});
+  /* сквозной ?lang= во все ссылки экосистемы (мосты через Hub) */
+  document.querySelectorAll('[data-eco]').forEach(a=>{const b=a.dataset.eco; a.href=b+(b.includes('?')?'&':'?')+'lang='+lang;});
+  document.querySelectorAll('#langpop button').forEach(b=>b.setAttribute('aria-current', b.dataset.lang===lang?'true':'false'));
+  langBtn.textContent=lang.toUpperCase();   /* код текущего языка в кружке */
+  root.setAttribute('lang',lang);
+  try{localStorage.setItem('sw-card-lang',lang)}catch(e){}
+}
+(function(){
+  let L=new URLSearchParams(location.search).get('lang');
+  if(!L){try{L=localStorage.getItem('sw-card-lang')}catch(e){}}
+  if(!L){const b=(navigator.language||'ru').slice(0,2).toLowerCase(); if(LANGS.includes(b))L=b;}
+  if(!LANGS.includes(L))L='ru';
+  applyLang(L);
+})();
+/* одна кнопка-кружок с кодом языка → выбор из 5 языков */
+function closePop(){langpop.classList.remove('open');langBtn.setAttribute('aria-expanded','false');}
+langBtn.addEventListener('click',e=>{
+  e.stopPropagation();
+  const open=langpop.classList.toggle('open');
+  langBtn.setAttribute('aria-expanded',open?'true':'false');
+});
+langpop.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{applyLang(btn.dataset.lang);closePop();}));
+document.addEventListener('click',e=>{if(!langpop.contains(e.target)&&e.target!==langBtn)closePop();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closePop();});
+
+/* ---------- theme toggle (☀/☾, стандарт линейки) ---------- */
+const tb=document.getElementById('themeBtn');
+function setTheme(t){
+  root.setAttribute('data-theme',t);
+  tb.textContent = t==='light' ? '☀' : '☾';
+  document.querySelector('meta[name=theme-color]').setAttribute('content', t==='light' ? '#eef7f9' : '#07232b');
+  try{localStorage.setItem('sw-card-theme',t)}catch(e){}
+}
+(function(){
+  let t;
+  try{t=localStorage.getItem('sw-card-theme')}catch(e){}
+  if(!t){const u=new URLSearchParams(location.search).get('theme'); if(u)t=u;}
+  if(!t)t = matchMedia('(prefers-color-scheme: light)').matches ? 'light':'dark';
+  setTheme(t);
+})();
+tb.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='light'?'dark':'light'));
+
+/* ---------- save contact (vCard via blob, offline) ---------- */
+const VCARD=[
+"BEGIN:VCARD","VERSION:3.0","N:Kartuzov;Igor;;;","FN:Igor Kartuzov",
+"ORG:SeedWave","TITLE:Founder & Architect — AI-first digital studio",
+"TEL;TYPE=CELL,VOICE:+351912916273","EMAIL;TYPE=INTERNET:i.kartuzov@gmail.com",
+"URL;TYPE=LinkedIn:https://www.linkedin.com/in/igor-kartuzov/",
+"URL;TYPE=WhatsApp:https://wa.me/351912916273",
+"URL;TYPE=Telegram:https://t.me/igor_kartuzov",
+"URL;TYPE=SeedWave Hub:https://ikartuzov-hub.github.io/seedwave-catalog/hub/",
+"URL;TYPE=Treino:https://ikartuzov-hub.github.io/treino/intro.html",
+"URL;TYPE=Birdie:https://ikartuzov-hub.github.io/birdie/intro.html",
+"X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/igor-kartuzov/",
+"END:VCARD"].join("\r\n");
+document.getElementById('saveBtn').addEventListener('click',()=>{
+  const blob=new Blob([VCARD],{type:'text/vcard;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='Igor_Kartuzov.vcf';
+  document.body.appendChild(a); a.click();
+  setTimeout(()=>{document.body.removeChild(a);URL.revokeObjectURL(url)},1500);
+});
+</script>
+</body>
+</html>
