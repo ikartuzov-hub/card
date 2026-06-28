@@ -1,0 +1,13 @@
+{
+  "name": "Igor Kartuzov",
+  "short_name": "Kartuzov",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0a1f2a",
+  "theme_color": "#0E8FA8",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
