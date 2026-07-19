@@ -1,1 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SeedWave — Instalar como ícone</title>
+<meta name="description" content="Como colocar qualquer produto SeedWave como ícone no telemóvel — abre como uma aplicação, num toque.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ikartuzov-hub.github.io/card/install/">
+<meta property="og:title" content="Instalar como ícone no telemóvel">
+<meta property="og:description" content="iPhone e Android — dois passos simples. SeedWave.">
+<meta name="theme-color" content="#0C3B42">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<style>
+:root{--bg:#0C3B42;--card:#14555E;--card2:#0A3038;--line:#2C6F79;--tx:#FFF;--tx2:#B9E2E9;--tx3:#7FC3CE;--tx4:#4E97A3;--acc:#5DCAA5;--acc-btn:#1D9E75;--on-acc:#04342C}
+html[data-theme="light"]{--bg:#F2F8F9;--card:#FFF;--card2:#E8F2F4;--line:#CBE3E8;--tx:#0A2E34;--tx2:#3C6B74;--tx3:#5A8A93;--tx4:#7FA5AC;--acc:#0F6E56;--acc-btn:#0F6E56;--on-acc:#FFF}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:420px;margin:0 auto;padding:16px 16px 28px}
+.top{display:flex;align-items:center;gap:8px;margin-bottom:22px}
+.mark{width:26px;height:26px}
+.spacer{flex:1}
+.chip{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0;border:.5px solid var(--line);color:var(--tx3);font-size:12px;background:var(--card);cursor:pointer;font-family:inherit;line-height:1}
+.langmenu{position:absolute;top:44px;right:0;background:var(--card);border:.5px solid var(--line);border-radius:12px;padding:6px;min-width:140px;display:none;z-index:10;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.langmenu.open{display:block}
+.langmenu button{display:block;width:100%;text-align:left;background:none;border:none;color:var(--tx2);font-family:inherit;font-size:14px;padding:9px 12px;border-radius:8px;cursor:pointer}
+.langmenu button.active,.langmenu button:hover{background:var(--card2);color:var(--tx)}
+h1{font-size:25px;font-weight:650;line-height:1.24;margin:0 0 10px}
+.lead{color:var(--tx2);font-size:14px;line-height:1.55;margin:0 0 22px}
+.card{background:var(--card);border-radius:16px;padding:16px 16px 6px;margin-bottom:14px}
+.os{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);border:1px solid var(--acc);border-radius:14px;padding:4px 11px;margin-bottom:6px}
+ol{margin:8px 0 10px;padding-left:22px;color:var(--tx2);font-size:14px;line-height:1.55}
+li{margin:0 0 10px}
+.k{color:var(--acc);font-weight:600}
+.note{color:var(--tx4);font-size:12.5px;line-height:1.55;text-align:center;margin:18px 0 0}
+.foot{text-align:center;padding-top:16px;margin-top:22px;border-top:.5px solid var(--line)}
+.foot svg{width:22px;height:22px;opacity:.8}
+.fl{color:var(--tx4);font-size:11.5px;margin-top:6px}
+.fl a{color:var(--tx4);text-decoration:underline;text-underline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
 
+  <div class="top">
+    <svg class="mark" viewBox="0 0 100 100" fill="none" stroke="#5DCAA5" stroke-width="7" stroke-linecap="round"><path d="M34 20 C64 20 64 74 34 74"/><path d="M18 88 Q28 82 38 88 Q48 94 58 88 Q68 82 78 88"/></svg>
+    <div class="spacer"></div>
+    <div style="position:relative">
+      <button class="chip" id="langBtn" aria-haspopup="true" aria-expanded="false">PT</button>
+      <div class="langmenu" id="langMenu" role="menu">
+        <button role="menuitem" data-l="pt">Português</button>
+        <button role="menuitem" data-l="en">English</button>
+        <button role="menuitem" data-l="ru">Русский</button>
+        <button role="menuitem" data-l="es">Español</button>
+        <button role="menuitem" data-l="de">Deutsch</button>
+      </div>
+    </div>
+    <button class="chip" id="themeBtn">☾</button>
+  </div>
+
+  <h1 data-t="h1"></h1>
+  <p class="lead" data-t="lead"></p>
+
+  <div class="card">
+    <span class="os">iPhone · Safari</span>
+    <ol>
+      <li data-t="i1"></li>
+      <li><span data-t="i2a"></span> <span class="k" data-t="i2k"></span> <span data-t="i2b"></span></li>
+      <li><span data-t="i3a"></span> <span class="k" data-t="i3k"></span></li>
+      <li><span data-t="i4a"></span> <span class="k" data-t="i4k"></span> <span data-t="i4b"></span></li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <span class="os">Android · Chrome</span>
+    <ol>
+      <li data-t="a1"></li>
+      <li><span data-t="a2a"></span> <span class="k">«⋮»</span> <span data-t="a2b"></span></li>
+      <li><span data-t="a3a"></span> <span class="k" data-t="a3k"></span></li>
+      <li><span data-t="a4a"></span> <span class="k" data-t="a4k"></span> <span data-t="a4b"></span></li>
+    </ol>
+  </div>
+
+  <p class="note" data-t="note"></p>
+
+  <div class="foot">
+    <svg viewBox="0 0 100 100" fill="none" stroke="#4E97A3" stroke-width="8" stroke-linecap="round"><path d="M34 20 C64 20 64 74 34 74"/><path d="M18 88 Q28 82 38 88 Q48 94 58 88 Q68 82 78 88"/></svg>
+    <div class="fl">© <a href="../">Igor Kartuzov</a> · <a href="https://ikartuzov-hub.github.io/seedwave-catalog/hub/">SeedWave</a></div>
+  </div>
+
+</div>
+<script>
+const L = {
+ pt:{h1:"Coloque como ícone no telemóvel",
+     lead:"Qualquer produto SeedWave abre como uma aplicação — num toque, sem loja de apps. Dois passos:",
+     i1:"Abra a página no Safari (não no Chrome — o ícone não será adicionado).",
+     i2a:"Toque no botão",i2k:"«Partilhar»",i2b:"em baixo — o quadrado com a seta ↑.",
+     i3a:"Deslize o menu e escolha",i3k:"«Adicionar ao ecrã principal»",
+     i4a:"Toque em",i4k:"«Adicionar»",i4b:"— o ícone aparece no ecrã.",
+     a1:"Abra a página no Chrome.",
+     a2a:"Toque no menu",a2b:"no canto superior direito.",
+     a3a:"Escolha",a3k:"«Adicionar ao ecrã principal»",
+     a4a:"Confirme",a4k:"«Adicionar»",a4b:"— o ícone aparece no ambiente de trabalho.",
+     note:"Funciona com todas as páginas SeedWave: cartões, Hub, Treino, Birdie e outros."},
+ en:{h1:"Add it as an icon on your phone",
+     lead:"Any SeedWave product opens like an app — one tap, no app store. Two steps:",
+     i1:"Open the page in Safari (not Chrome — the icon won't be added).",
+     i2a:"Tap the",i2k:"“Share”",i2b:"button below — the square with the ↑ arrow.",
+     i3a:"Scroll the menu and choose",i3k:"“Add to Home Screen”",
+     i4a:"Tap",i4k:"“Add”",i4b:"— the icon appears on your screen.",
+     a1:"Open the page in Chrome.",
+     a2a:"Tap the",a2b:"menu in the top right corner.",
+     a3a:"Choose",a3k:"“Add to Home screen”",
+     a4a:"Confirm",a4k:"“Add”",a4b:"— the icon appears on your home screen.",
+     note:"Works with every SeedWave page: cards, Hub, Treino, Birdie and more."},
+ ru:{h1:"Поставьте иконкой на телефон",
+     lead:"Любой продукт SeedWave открывается как приложение — в один тап, без магазина приложений. Два шага:",
+     i1:"Откройте страницу в Safari (не в Chrome — иконка не добавится).",
+     i2a:"Нажмите кнопку",i2k:"«Поделиться»",i2b:"внизу — квадрат со стрелкой ↑.",
+     i3a:"Пролистайте меню и выберите",i3k:"«На экран „Домой“»",
+     i4a:"Нажмите",i4k:"«Добавить»",i4b:"— иконка появится на экране.",
+     a1:"Откройте страницу в Chrome.",
+     a2a:"Нажмите меню",a2b:"вверху справа.",
+     a3a:"Выберите",a3k:"«Добавить на главный экран»",
+     a4a:"Подтвердите",a4k:"«Добавить»",a4b:"— иконка появится на рабочем столе.",
+     note:"Работает со всеми страницами SeedWave: карточки, Хаб, Treino, Birdie и другие."},
+ es:{h1:"Póngalo como icono en su teléfono",
+     lead:"Cualquier producto SeedWave se abre como una aplicación — en un toque, sin tienda de apps. Dos pasos:",
+     i1:"Abra la página en Safari (no en Chrome — el icono no se añadirá).",
+     i2a:"Pulse el botón",i2k:"«Compartir»",i2b:"abajo — el cuadrado con la flecha ↑.",
+     i3a:"Deslice el menú y elija",i3k:"«Añadir a pantalla de inicio»",
+     i4a:"Pulse",i4k:"«Añadir»",i4b:"— el icono aparece en la pantalla.",
+     a1:"Abra la página en Chrome.",
+     a2a:"Pulse el menú",a2b:"arriba a la derecha.",
+     a3a:"Elija",a3k:"«Añadir a pantalla de inicio»",
+     a4a:"Confirme",a4k:"«Añadir»",a4b:"— el icono aparece en el escritorio.",
+     note:"Funciona con todas las páginas SeedWave: tarjetas, Hub, Treino, Birdie y más."},
+ de:{h1:"Als Icon auf dem Handy ablegen",
+     lead:"Jedes SeedWave-Produkt öffnet sich wie eine App — mit einem Tipp, ohne App-Store. Zwei Schritte:",
+     i1:"Öffnen Sie die Seite in Safari (nicht in Chrome — das Icon wird sonst nicht hinzugefügt).",
+     i2a:"Tippen Sie unten auf",i2k:"„Teilen“",i2b:"— das Quadrat mit dem Pfeil ↑.",
+     i3a:"Scrollen Sie im Menü und wählen Sie",i3k:"„Zum Home-Bildschirm“",
+     i4a:"Tippen Sie auf",i4k:"„Hinzufügen“",i4b:"— das Icon erscheint auf dem Bildschirm.",
+     a1:"Öffnen Sie die Seite in Chrome.",
+     a2a:"Tippen Sie auf das Menü",a2b:"oben rechts.",
+     a3a:"Wählen Sie",a3k:"„Zum Startbildschirm hinzufügen“",
+     a4a:"Bestätigen Sie",a4k:"„Hinzufügen“",a4b:"— das Icon erscheint auf dem Startbildschirm.",
+     note:"Funktioniert mit allen SeedWave-Seiten: Karten, Hub, Treino, Birdie und mehr."}
+};
+const ORDER = ["pt","en","ru","es","de"];
+const P = new URLSearchParams(location.search);
+let lang = P.get("lang");
+if(!ORDER.includes(lang)){const n=(navigator.language||"pt").slice(0,2).toLowerCase();lang=ORDER.includes(n)?n:"pt";}
+function render(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(el=>{const v=L[lang][el.dataset.t];if(v!==undefined)el.textContent=v;});
+  document.getElementById("langBtn").textContent = lang.toUpperCase();
+  document.querySelectorAll("#langMenu button").forEach(b=>b.classList.toggle("active",b.dataset.l===lang));
+  document.querySelectorAll(".fl a").forEach(a=>{const u=new URL(a.getAttribute("href"),location.href);u.searchParams.set("lang",lang);a.href=u.toString();});
+}
+function setLang(l){lang=l;const u=new URL(location.href);u.searchParams.set("lang",lang);history.replaceState(null,"",u);render();}
+const lb=document.getElementById("langBtn"),lm=document.getElementById("langMenu");
+lb.onclick=e=>{e.stopPropagation();lb.setAttribute("aria-expanded",lm.classList.toggle("open"));};
+lm.querySelectorAll("button").forEach(b=>b.onclick=()=>{setLang(b.dataset.l);lm.classList.remove("open");});
+document.addEventListener("click",()=>lm.classList.remove("open"));
+let theme="dark";try{theme=localStorage.getItem("sw-theme")||"dark";}catch(e){}
+function aT(){document.documentElement.dataset.theme=theme;document.getElementById("themeBtn").textContent=theme==="dark"?"☾":"☀";try{localStorage.setItem("sw-theme",theme);}catch(e){}}
+document.getElementById("themeBtn").onclick=()=>{theme=theme==="dark"?"light":"dark";aT();};
+aT();render();
+</script>
+</body>
+</html>
