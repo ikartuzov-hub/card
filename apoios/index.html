@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Igor Kartuzov — O Estado devolve até 80% do seu investimento</title>
+<meta name="description" content="Apoios para negócios em Portugal. Encontro o programa certo, trato da candidatura, acompanho até ao pagamento.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ikartuzov-hub.github.io/card/apoios/">
+<meta property="og:title" content="O Estado devolve até 80% do seu investimento">
+<meta property="og:description" content="Apoios para negócios em Portugal. Encontro o programa certo, trato da candidatura, acompanho até ao pagamento.">
+<meta property="og:image" content="https://ikartuzov-hub.github.io/card/apoios/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.svg?v=2" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg?v=2">
+<meta name="theme-color" content="#0C3B42">
+<style>
+:root{--bg:#0C3B42;--card:#14555E;--card2:#0A3038;--line:#2C6F79;--tx:#FFF;--tx2:#B9E2E9;--tx3:#7FC3CE;--tx4:#4E97A3;--acc:#5DCAA5;--acc-deep:#0F6E56;--acc-btn:#1D9E75;--on-acc:#04342C}
+html[data-theme="light"]{--bg:#F2F8F9;--card:#FFF;--card2:#E8F2F4;--line:#CBE3E8;--tx:#0A2E34;--tx2:#3C6B74;--tx3:#5A8A93;--tx4:#7FA5AC;--acc:#0F6E56;--acc-deep:#D6EFE6;--acc-btn:#0F6E56;--on-acc:#FFF}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.hero{position:fixed;inset:0 0 auto;height:300px;z-index:0;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;opacity:.30}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,59,66,.5) 0%,var(--bg) 90%)}
+html[data-theme="light"] .hero:after{background:linear-gradient(180deg,rgba(242,248,249,.5) 0%,var(--bg) 90%)}
+.wrap{position:relative;z-index:1;max-width:420px;margin:0 auto;padding:16px 16px 28px}
+.top{display:flex;align-items:center;gap:8px;margin-bottom:22px}
+.mark{width:26px;height:26px}
+.spacer{flex:1}
+.chip{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;padding:0;border:.5px solid var(--line);color:var(--tx3);font-size:12px;background:var(--card);cursor:pointer;font-family:inherit;line-height:1}
+.langmenu{position:absolute;top:38px;right:0;background:var(--card);border:.5px solid var(--line);border-radius:12px;padding:6px;min-width:140px;display:none;z-index:10;box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.langmenu.open{display:block}
+.langmenu button{display:block;width:100%;text-align:left;background:none;border:none;color:var(--tx2);font-family:inherit;font-size:14px;padding:9px 12px;border-radius:8px;cursor:pointer}
+.langmenu button.active,.langmenu button:hover{background:var(--card2);color:var(--tx)}
+.heroicon{width:56px;height:56px;stroke:var(--acc);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:14px}
+h1{font-size:25px;text-shadow:0 1px 12px rgba(0,0,0,.25);font-weight:650;line-height:1.22;margin:0 0 12px}
+.sub{font-size:14.5px;color:var(--tx2);line-height:1.55;margin-bottom:12px}
+.badge{display:inline-block;background:var(--acc-deep);color:var(--acc);font-size:12.5px;font-weight:600;padding:5px 12px;border-radius:11px;margin-bottom:20px}
+html[data-theme="light"] .badge{color:#0F6E56}
+.cta{display:block;background:var(--acc-btn);border-radius:13px;padding:15px;text-align:center;color:var(--on-acc);font-size:15.5px;font-weight:600;text-decoration:none;margin-bottom:26px}
+.cta:active{transform:scale(.99)}
+.who{display:flex;align-items:center;gap:12px;margin:0 0 20px;text-decoration:none;color:inherit}
+.ava{width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--card);border:2px solid var(--line)}
+.nm{font-size:14px;font-weight:600}
+.ws{font-size:11.5px;color:var(--tx3);line-height:1.35}
+.arr{color:var(--tx3);font-weight:400}
+.icons{display:flex;gap:8px;margin:20px 0 12px}
+.ic{flex:1;background:var(--card);border-radius:12px;padding:13px 0;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.ic.primary{background:var(--acc-btn)}
+.ic svg{width:20px;height:20px;stroke:var(--tx2);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ic.primary svg{stroke:var(--on-acc)}
+.save{display:block;flex:1;background:var(--card2);border:none;border-radius:12px;padding:13px;color:var(--tx3);font-size:13px;font-family:inherit;cursor:pointer}
+.foot{text-align:center;padding-top:16px;margin-top:18px;border-top:.5px solid var(--line)}
+.fl{color:var(--tx4);font-size:11px;margin-top:6px;line-height:1.7}
+.fl a{color:var(--tx4);text-decoration:underline;text-underline-offset:2px}
+</style>
+</head>
+<body>
+<div class="hero"><img src="hero.jpg" alt="" onerror="this.style.display='none'"></div>
+<div class="wrap">
+  <div class="top">
+    <svg class="mark" viewBox="0 0 100 100" fill="none" stroke="#4C8DFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M30 72 L50 16 L70 72"/><path d="M37 52 Q43.5 46 50 52 Q56.5 58 63 52"/><path d="M15 88 Q28 82 39 88 Q50 94 61 88 Q72 82 85 88"/></svg>
+    <div class="spacer"></div>
+    <div style="position:relative">
+      <button class="chip" id="langBtn" aria-haspopup="true" aria-expanded="false">PT</button>
+      <div class="langmenu" id="langMenu" role="menu">
+        <button role="menuitem" data-l="pt">Português</button>
+        <button role="menuitem" data-l="en">English</button>
+        <button role="menuitem" data-l="ru">Русский</button>
+        <button role="menuitem" data-l="es">Español</button>
+        <button role="menuitem" data-l="de">Deutsch</button>
+      </div>
+    </div>
+    <button class="chip" id="themeBtn">☾</button>
+  </div>
 
+  <a class="who" href="../">
+    <img class="ava" src="photo.jpg" alt="Igor Kartuzov" onerror="this.style.visibility='hidden'">
+    <div><div class="nm">Igor Kartuzov <span class="arr">→</span></div><div class="ws">Madeira · <span data-t="who"></span></div></div>
+  </a>
+
+  <h1 data-t="h1"></h1>
+  <div class="sub" data-t="sub"></div>
+  <span class="badge" data-t="badge"></span>
+  <a class="cta" href="#contact" data-t="cta"></a>
+
+  <div class="icons" id="contact">
+    <a class="ic primary" href="https://t.me/igor_kartuzov" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M15 10l-4 4 6 6 4-16-18 7 4 2 2 6 3-4"/></svg></a>
+    <a class="ic" href="https://wa.me/351912916273" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg></a>
+    <a class="ic" href="tel:+351912916273" aria-label="Phone"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+    <a class="ic" href="mailto:i.kartuzov@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+    <a class="ic" href="https://www.linkedin.com/in/igor-kartuzov" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg></a>
+  </div>
+  <div style="display:flex;gap:8px">
+    <button class="save" id="saveBtn" data-t="save"></button>
+    <button class="save" id="shareBtn" data-t="share"></button>
+  </div>
+
+  <div class="foot">
+    <div class="fl">© <a href="../">Igor Kartuzov</a> · <a href="https://ikartuzov-hub.github.io/seedwave-catalog/hub/">SeedWave</a></div>
+  </div>
+</div>
+<script>
+const L = {"pt": {"h1": "O Estado devolve até 80% do seu investimento", "sub": "Apoios para negócios em Portugal. Encontro o programa certo, trato da candidatura, acompanho até ao pagamento.", "badge": "Equipamento · contratação · energia · digital", "cta": "Verificar o meu negócio", "more": "Também faço:", "m1": "Cooperativa: imóveis na Madeira a partir de 5 000 €", "m2": "Da ideia a um produto digital vivo", "who": "35 anos em negócios reais · Madeira", "save": "Guardar contacto", "personal": "Cartão pessoal →", "hub": "Projetos do estúdio", "share": "Partilhar contacto", "copied": "Ligação copiada"}, "en": {"h1": "The State returns up to 80% of your investment", "sub": "Grants for businesses in Portugal. I find the right programme, handle the application, follow it to payment.", "badge": "Equipment · hiring · energy · digital", "cta": "Check my business", "more": "I also do:", "m1": "Cooperative: Madeira property from €5,000", "m2": "From idea to a live digital product", "who": "35 years in real business · Madeira", "save": "Save contact", "personal": "Personal card →", "hub": "Studio projects", "share": "Share contact", "copied": "Link copied"}, "ru": {"h1": "Государство возвращает до 80% ваших инвестиций", "sub": "Субсидии для бизнеса в Португалии. Нахожу нужную программу, оформляю заявку, веду до выплаты.", "badge": "Оборудование · найм · энергетика · digital", "cta": "Проверить мой бизнес", "more": "Ещё я делаю:", "m1": "Кооператив: недвижимость Мадейры от 5 000 €", "m2": "Из идеи — работающий цифровой продукт", "who": "35 лет в реальном бизнесе · Мадейра", "save": "Сохранить контакт", "personal": "Личная карточка →", "hub": "Проекты студии", "share": "Поделиться контактом", "copied": "Ссылка скопирована"}, "es": {"h1": "El Estado devuelve hasta el 80% de su inversión", "sub": "Ayudas para negocios en Portugal. Encuentro el programa adecuado, tramito la solicitud y la acompaño hasta el pago.", "badge": "Equipos · contratación · energía · digital", "cta": "Verificar mi negocio", "more": "También hago:", "m1": "Cooperativa: inmuebles en Madeira desde 5 000 €", "m2": "De la idea a un producto digital vivo", "who": "35 años en negocios reales · Madeira", "save": "Guardar contacto", "personal": "Tarjeta personal →", "hub": "Proyectos del estudio", "share": "Compartir contacto", "copied": "Enlace copiado"}, "de": {"h1": "Der Staat erstattet bis zu 80% Ihrer Investition", "sub": "Förderungen für Unternehmen in Portugal. Ich finde das richtige Programm, erledige den Antrag und begleite bis zur Auszahlung.", "badge": "Ausrüstung · Einstellung · Energie · Digital", "cta": "Mein Unternehmen prüfen", "more": "Außerdem:", "m1": "Genossenschaft: Immobilien auf Madeira ab 5 000 €", "m2": "Von der Idee zum lebenden digitalen Produkt", "who": "35 Jahre im realen Geschäft · Madeira", "save": "Kontakt speichern", "personal": "Persönliche Karte →", "hub": "Studio-Projekte", "share": "Kontakt teilen", "copied": "Link kopiert"}};
+const ORDER = ["pt","en","ru","es","de"];
+const P = new URLSearchParams(location.search);
+let lang = P.get("lang");
+if(!ORDER.includes(lang)){const n=(navigator.language||"pt").slice(0,2).toLowerCase();lang=ORDER.includes(n)?n:"pt";}
+function render(){
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-t]").forEach(el=>{const v=L[lang][el.dataset.t];if(v)el.textContent=v;});
+  document.getElementById("langBtn").textContent = lang.toUpperCase();
+  document.querySelectorAll("#langMenu button").forEach(b=>b.classList.toggle("active",b.dataset.l===lang));
+  document.querySelectorAll("a.cta, a.who, .fl a").forEach(a=>{
+    const href=a.getAttribute("href");
+    if(href.charAt(0)==="#")return;
+    const u=new URL(href,location.href);
+    if(/t\.me|wa\.me|linkedin/.test(u.hostname))return;
+    u.searchParams.set("lang",lang);a.href=u.toString();
+  });
+}
+function setLang(l){lang=l;const u=new URL(location.href);u.searchParams.set("lang",lang);history.replaceState(null,"",u);render();}
+const lb=document.getElementById("langBtn"),lm=document.getElementById("langMenu");
+lb.onclick=e=>{e.stopPropagation();lb.setAttribute("aria-expanded",lm.classList.toggle("open"));};
+lm.querySelectorAll("button").forEach(b=>b.onclick=()=>{setLang(b.dataset.l);lm.classList.remove("open");});
+document.addEventListener("click",()=>lm.classList.remove("open"));
+let theme="dark";try{theme=localStorage.getItem("sw-theme")||"dark";}catch(e){}
+function aT(){document.documentElement.dataset.theme=theme;document.getElementById("themeBtn").textContent=theme==="dark"?"☾":"☀";try{localStorage.setItem("sw-theme",theme);}catch(e){}}
+document.getElementById("themeBtn").onclick=()=>{theme=theme==="dark"?"light":"dark";aT();};
+document.getElementById("saveBtn").onclick=()=>{
+  const v=["BEGIN:VCARD","VERSION:3.0","N:Kartuzov;Igor;;;","FN:Igor Kartuzov","ORG:SeedWave","TITLE:"+L[lang].who,"TEL;TYPE=CELL:+351912916273","EMAIL:i.kartuzov@gmail.com","URL:https://ikartuzov-hub.github.io/card/apoios/","X-SOCIALPROFILE;TYPE=telegram:https://t.me/igor_kartuzov","ADR;TYPE=WORK:;;Funchal;;;;Portugal","END:VCARD"].join("\r\n");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([v],{type:"text/vcard"}));a.download="Igor_Kartuzov.vcf";a.click();
+};
+document.getElementById("shareBtn").onclick=async()=>{
+  const u=new URL(location.href);u.searchParams.set("lang",lang);
+  const data={title:"Igor Kartuzov",text:L[lang].h1,url:u.toString()};
+  if(navigator.share){try{await navigator.share(data);}catch(e){}}
+  else{try{await navigator.clipboard.writeText(u.toString());alert(L[lang].copied||"Link copied");}catch(e){}}
+};
+aT();render();
+</script>
+</body>
+</html>
