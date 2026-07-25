@@ -408,7 +408,7 @@ const shareBtn=document.getElementById('shareBtn');
 shareBtn.addEventListener('click',async()=>{
   const lang=root.getAttribute('lang')||'pt';
   const d=LOCALES[lang]||LOCALES.pt;
-  const url='https://i.seedwave.pt/?lang='+lang;
+  const url='https://i.seedwave.pt/';
   if(navigator.share){
     try{await navigator.share({title:'Igor Kartuzov · SeedWave',text:d.share_text,url:url});}catch(e){}
   }else{
