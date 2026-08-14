@@ -1,0 +1,99 @@
+{
+  "_note": "ЕДИНЫЙ ИСТОЧНИК ПРАВДЫ по ссылкам визитки. Правится ТОЛЬКО здесь, затем запускается python3 tools/sync-links.py — он разносит значения по всем HTML и по igor-kartuzov.vcf. При смене адреса: старое значение перенести в aliases, новое записать в url. Никогда не править ссылки руками в страницах.",
+  "_updated": "2026-08-14",
+
+  "links": {
+    "card": {
+      "url": "https://i.seedwave.pt/",
+      "aliases": ["https://ikartuzov-hub.github.io/card/"],
+      "note": "корень визитки"
+    },
+    "card_apoios": {
+      "url": "https://i.seedwave.pt/apoios/",
+      "aliases": ["https://ikartuzov-hub.github.io/card/apoios/"],
+      "note": "визитка · субсидии"
+    },
+    "card_biz": {
+      "url": "https://i.seedwave.pt/biz/",
+      "aliases": ["https://ikartuzov-hub.github.io/card/biz/"],
+      "note": "визитка · бизнес"
+    },
+    "card_build": {
+      "url": "https://i.seedwave.pt/build/",
+      "aliases": ["https://ikartuzov-hub.github.io/card/build/"],
+      "note": "визитка · стройка"
+    },
+    "card_coop": {
+      "url": "https://i.seedwave.pt/coop/",
+      "aliases": ["https://ikartuzov-hub.github.io/card/coop/"],
+      "note": "визитка · кооператив"
+    },
+    "card_install": {
+      "url": "https://i.seedwave.pt/install/",
+      "aliases": ["https://ikartuzov-hub.github.io/card/install/"],
+      "note": "визитка · установка на телефон"
+    },
+
+    "hub": {
+      "url": "https://seedwave.pt/hub/",
+      "aliases": [
+        "https://ikartuzov-hub.github.io/seedwave-catalog/hub/",
+        "https://seedwave.dev/hub/"
+      ],
+      "note": "витрина экосистемы"
+    },
+    "nam": {
+      "url": "https://nam.seedwave.pt/",
+      "aliases": ["https://ikartuzov-hub.github.io/nam/", "https://nam.seedwave.dev/"],
+      "note": "чекер субсидий Мадейры"
+    },
+    "apoios_igor": {
+      "url": "https://apoios.seedwave.pt/igor/",
+      "aliases": ["https://apoios.seedwave.dev/igor/"],
+      "note": "профиль: кто я в субсидиях"
+    },
+    "dubai": {
+      "url": "https://d.seedwave.pt/",
+      "aliases": ["https://ikartuzov-hub.github.io/dubai-madeira/", "https://d.seedwave.dev/"],
+      "note": "Dubai Madeira"
+    },
+    "forge": {
+      "url": "https://f.seedwave.pt/",
+      "aliases": ["https://ikartuzov-hub.github.io/forge/", "https://f.seedwave.dev/"],
+      "note": "Forge"
+    },
+    "treino_intro": {
+      "url": "https://t.seedwave.pt/intro.html",
+      "aliases": ["https://ikartuzov-hub.github.io/treino/intro.html"],
+      "note": "Treino"
+    },
+    "birdie_intro": {
+      "url": "https://b.seedwave.pt/intro.html",
+      "aliases": ["https://ikartuzov-hub.github.io/birdie/intro.html"],
+      "note": "Birdie"
+    },
+
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/igor-kartuzov/",
+      "aliases": [],
+      "note": "LinkedIn"
+    },
+    "whatsapp": {
+      "url": "https://wa.me/351912916273",
+      "aliases": [],
+      "note": "WhatsApp"
+    },
+    "telegram": {
+      "url": "https://t.me/igor_kartuzov",
+      "aliases": [],
+      "note": "Telegram"
+    }
+  },
+
+  "contacts": {
+    "phone": "+351912916273",
+    "email_public": "igor@seedwave.pt",
+    "email_legacy": "i.kartuzov@gmail.com",
+    "_note_email": "ВНИМАНИЕ: сейчас в файлах два адреса. Главная страница отдаёт igor@seedwave.pt, подстраницы и igor-kartuzov.vcf — i.kartuzov@gmail.com. Решение за Игорем: какой считать каноническим. До решения sync-links.py адреса НЕ трогает."
+  }
+}
