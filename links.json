@@ -92,8 +92,25 @@
 
   "contacts": {
     "phone": "+351912916273",
-    "email_public": "igor@seedwave.pt",
-    "email_legacy": "i.kartuzov@gmail.com",
-    "_note_email": "ВНИМАНИЕ: сейчас в файлах два адреса. Главная страница отдаёт igor@seedwave.pt, подстраницы и igor-kartuzov.vcf — i.kartuzov@gmail.com. Решение за Игорем: какой считать каноническим. До решения sync-links.py адреса НЕ трогает."
+
+    "email_vitrina": "igor@seedwave.pt",
+    "email_vsegda": "i.kartuzov@gmail.com",
+
+    "_reshenie": "Канонического адреса ОДНОГО нет — у адресов разные роли. igor@seedwave.pt: витрина, переписка с португальскими госучреждениями по субсидиям, зависит от домена и Cloudflare Email Routing. i.kartuzov@gmail.com: полный рабочий адрес, был/есть/будет всегда, от домена не зависит.",
+
+    "_pravilo": "В vCard кладём ОБА адреса всегда — первый помечен PREF, он и подставляется в контакт по умолчанию. Порядок зависит от аудитории страницы. Так витрина работает там, где важна, а вечный адрес страхует контакт, если что-то случится с доменом.",
+
+    "pref_po_stranicam": {
+      "index": "igor@seedwave.pt",
+      "apoios": "igor@seedwave.pt",
+      "igor-kartuzov.vcf": "igor@seedwave.pt",
+      "biz": "i.kartuzov@gmail.com",
+      "build": "i.kartuzov@gmail.com",
+      "coop": "i.kartuzov@gmail.com"
+    },
+
+    "_mailto": "Видимая кнопка «Email» на странице: на index и apoios ведёт на igor@seedwave.pt, на biz/build/coop — на i.kartuzov@gmail.com.",
+
+    "_vnimanie": "sync-links.py адреса НЕ переписывает — только ссылки. Почта правится руками по таблице выше, и при аудите сверяется с ней."
   }
 }

@@ -53,8 +53,11 @@ def main():
     touched = []
 
     for path in targets():
+        # newline="" обязателен: без него Python схлопывает CRLF в LF при
+        # чтении и записи. Для igor-kartuzov.vcf это порча формата —
+        # vCard по RFC 6350 требует CRLF. Один раз уже наступили.
         try:
-            with open(path, encoding="utf-8") as f:
+            with open(path, encoding="utf-8", newline="") as f:
                 text = f.read()
         except (UnicodeDecodeError, OSError):
             continue
@@ -72,7 +75,7 @@ def main():
             touched.append((rel, hits))
             total += sum(h[3] for h in hits)
             if apply:
-                with open(path, "w", encoding="utf-8") as f:
+                with open(path, "w", encoding="utf-8", newline="") as f:
                     f.write(text)
 
     if not touched:

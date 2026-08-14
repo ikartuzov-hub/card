@@ -129,7 +129,7 @@ let theme="dark";try{theme=localStorage.getItem("sw-theme")||"dark";}catch(e){}
 function aT(){document.documentElement.dataset.theme=theme;document.getElementById("themeBtn").textContent=theme==="dark"?"☾":"☀";try{localStorage.setItem("sw-theme",theme);}catch(e){}}
 document.getElementById("themeBtn").onclick=()=>{theme=theme==="dark"?"light":"dark";aT();};
 document.getElementById("saveBtn").onclick=()=>{
-  const v=["BEGIN:VCARD","VERSION:3.0","N:Kartuzov;Igor;;;","FN:Igor Kartuzov","ORG:SeedWave","TITLE:"+L[lang].who,"TEL;TYPE=CELL:+351912916273","EMAIL:i.kartuzov@gmail.com","URL:https://i.seedwave.pt/build/","X-SOCIALPROFILE;TYPE=telegram:https://t.me/igor_kartuzov","ADR;TYPE=WORK:;;Funchal;;;;Portugal","END:VCARD"].join("\r\n");
+  const v=["BEGIN:VCARD","VERSION:3.0","N:Kartuzov;Igor;;;","FN:Igor Kartuzov","ORG:SeedWave","TITLE:"+L[lang].who,"TEL;TYPE=CELL:+351912916273","EMAIL;TYPE=INTERNET,PREF:i.kartuzov@gmail.com","EMAIL;TYPE=INTERNET:igor@seedwave.pt","URL:https://i.seedwave.pt/build/","X-SOCIALPROFILE;TYPE=telegram:https://t.me/igor_kartuzov","ADR;TYPE=WORK:;;Funchal;;;;Portugal","END:VCARD"].join("\r\n");
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([v],{type:"text/vcard"}));a.download="Igor_Kartuzov.vcf";a.click();
 };
 document.getElementById("shareBtn").onclick=async()=>{

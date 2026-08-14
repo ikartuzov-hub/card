@@ -89,7 +89,7 @@ html[data-theme="light"] .badge{color:#0F6E56}
     <a class="ic primary" href="https://t.me/igor_kartuzov" aria-label="Telegram"><svg viewBox="0 0 24 24"><path d="M15 10l-4 4 6 6 4-16-18 7 4 2 2 6 3-4"/></svg></a>
     <a class="ic" href="https://wa.me/351912916273" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg></a>
     <a class="ic" href="tel:+351912916273" aria-label="Phone"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
-    <a class="ic" href="mailto:i.kartuzov@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+    <a class="ic" href="mailto:igor@seedwave.pt" aria-label="Email"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
     <a class="ic" href="https://www.linkedin.com/in/igor-kartuzov" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg></a>
   </div>
   <div style="display:flex;gap:8px">
@@ -129,7 +129,7 @@ let theme="dark";try{theme=localStorage.getItem("sw-theme")||"dark";}catch(e){}
 function aT(){document.documentElement.dataset.theme=theme;document.getElementById("themeBtn").textContent=theme==="dark"?"☾":"☀";try{localStorage.setItem("sw-theme",theme);}catch(e){}}
 document.getElementById("themeBtn").onclick=()=>{theme=theme==="dark"?"light":"dark";aT();};
 document.getElementById("saveBtn").onclick=()=>{
-  const v=["BEGIN:VCARD","VERSION:3.0","N:Kartuzov;Igor;;;","FN:Igor Kartuzov","ORG:SeedWave","TITLE:"+L[lang].who,"TEL;TYPE=CELL:+351912916273","EMAIL:i.kartuzov@gmail.com","URL:https://i.seedwave.pt/apoios/","X-SOCIALPROFILE;TYPE=telegram:https://t.me/igor_kartuzov","ADR;TYPE=WORK:;;Funchal;;;;Portugal","END:VCARD"].join("\r\n");
+  const v=["BEGIN:VCARD","VERSION:3.0","N:Kartuzov;Igor;;;","FN:Igor Kartuzov","ORG:SeedWave","TITLE:"+L[lang].who,"TEL;TYPE=CELL:+351912916273","EMAIL;TYPE=INTERNET,PREF:igor@seedwave.pt","EMAIL;TYPE=INTERNET:i.kartuzov@gmail.com","URL:https://i.seedwave.pt/apoios/","X-SOCIALPROFILE;TYPE=telegram:https://t.me/igor_kartuzov","ADR;TYPE=WORK:;;Funchal;;;;Portugal","END:VCARD"].join("\r\n");
   const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([v],{type:"text/vcard"}));a.download="Igor_Kartuzov.vcf";a.click();
 };
 document.getElementById("shareBtn").onclick=async()=>{
