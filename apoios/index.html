@@ -53,6 +53,12 @@ html[data-theme="light"] .badge{color:#0F6E56}
 .foot{text-align:center;padding-top:16px;margin-top:18px;border-top:.5px solid var(--line)}
 .fl{color:var(--tx4);font-size:11px;margin-top:6px;line-height:1.7}
 .fl a{color:var(--tx4);text-decoration:underline;text-underline-offset:2px}
+.chlabel{font-size:11px;color:var(--tx4);text-transform:uppercase;letter-spacing:.07em;margin:24px 0 8px}
+.chans{display:flex;gap:8px}
+.chan{flex:1;display:flex;align-items:center;gap:9px;background:var(--card2);border:.5px solid var(--line);border-radius:12px;padding:11px 12px;text-decoration:none;min-width:0}
+.chan>svg{width:18px;height:18px;stroke:var(--tx3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.chan .k{display:block;font-size:13px;font-weight:600;color:var(--tx)}
+.chan .v{display:block;font-size:10.5px;color:var(--tx4);line-height:1.35}
 </style>
 <link rel="canonical" href="https://i.seedwave.pt/apoios/">
 </head>
@@ -97,12 +103,24 @@ html[data-theme="light"] .badge{color:#0F6E56}
     <button class="save" id="shareBtn" data-t="share"></button>
   </div>
 
+
+  <!-- Каналы оповещений. Отдельно от контактов выше: те ведут в личку, эти — подписка. -->
+  <p class="chlabel" data-t="chL"></p>
+  <div class="chans">
+    <a class="chan" href="https://t.me/apoiosmadeira" target="_blank" rel="noopener" title="@apoiosmadeira">
+      <svg viewBox="0 0 24 24"><path d="M15 10l-4 4 6 6 4-16-18 7 4 2 2 6 3-4"/></svg><span><span class="k">Telegram</span><span class="v" data-t="chS"></span></span>
+    </a>
+    <a class="chan" href="https://whatsapp.com/channel/0029VbDHFF8K0IBiiqgMON2K" target="_blank" rel="noopener" title="Apoios Madeira · Prazos">
+      <svg viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg><span><span class="k">WhatsApp</span><span class="v" data-t="chS"></span></span>
+    </a>
+  </div>
+
   <div class="foot">
     <div class="fl">© <a href="../">Igor Kartuzov</a> · <a href="https://seedwave.pt/hub/">SeedWave</a></div>
   </div>
 </div>
 <script>
-const L = {"pt": {"h1": "O Estado devolve até 80% do seu investimento", "sub": "Apoios para negócios em Portugal. Encontro o programa certo, trato da candidatura, acompanho até ao pagamento.", "badge": "Equipamento · contratação · energia · digital", "cta": "Verificar o meu negócio", "more": "Também faço:", "m1": "Cooperativa: imóveis na Madeira a partir de 5 000 €", "m2": "Da ideia a um produto digital vivo", "who": "35 anos em negócios reais", "save": "Guardar contacto", "personal": "Cartão pessoal →", "hub": "Projetos do estúdio", "share": "Partilhar contacto", "copied": "Ligação copiada"}, "en": {"h1": "The State returns up to 80% of your investment", "sub": "Grants for businesses in Portugal. I find the right programme, handle the application, follow it to payment.", "badge": "Equipment · hiring · energy · digital", "cta": "Check my business", "more": "I also do:", "m1": "Cooperative: Madeira property from €5,000", "m2": "From idea to a live digital product", "who": "35 years in real business", "save": "Save contact", "personal": "Personal card →", "hub": "Studio projects", "share": "Share contact", "copied": "Link copied"}, "ru": {"h1": "Государство возвращает до 80% ваших инвестиций", "sub": "Субсидии для бизнеса в Португалии. Нахожу нужную программу, оформляю заявку, веду до выплаты.", "badge": "Оборудование · найм · энергетика · digital", "cta": "Проверить мой бизнес", "more": "Ещё я делаю:", "m1": "Кооператив: недвижимость Мадейры от 5 000 €", "m2": "Из идеи — работающий цифровой продукт", "who": "35 лет в реальном бизнесе", "save": "Сохранить контакт", "personal": "Личная карточка →", "hub": "Проекты студии", "share": "Поделиться контактом", "copied": "Ссылка скопирована"}, "es": {"h1": "El Estado devuelve hasta el 80% de su inversión", "sub": "Ayudas para negocios en Portugal. Encuentro el programa adecuado, tramito la solicitud y la acompaño hasta el pago.", "badge": "Equipos · contratación · energía · digital", "cta": "Verificar mi negocio", "more": "También hago:", "m1": "Cooperativa: inmuebles en Madeira desde 5 000 €", "m2": "De la idea a un producto digital vivo", "who": "35 años en negocios reales", "save": "Guardar contacto", "personal": "Tarjeta personal →", "hub": "Proyectos del estudio", "share": "Compartir contacto", "copied": "Enlace copiado"}, "de": {"h1": "Der Staat erstattet bis zu 80% Ihrer Investition", "sub": "Förderungen für Unternehmen in Portugal. Ich finde das richtige Programm, erledige den Antrag und begleite bis zur Auszahlung.", "badge": "Ausrüstung · Einstellung · Energie · Digital", "cta": "Mein Unternehmen prüfen", "more": "Außerdem:", "m1": "Genossenschaft: Immobilien auf Madeira ab 5 000 €", "m2": "Von der Idee zum lebenden digitalen Produkt", "who": "35 Jahre im realen Geschäft", "save": "Kontakt speichern", "personal": "Persönliche Karte →", "hub": "Studio-Projekte", "share": "Kontakt teilen", "copied": "Link kopiert"}};
+const L = {"pt": {"h1": "O Estado devolve até 80% do seu investimento", "sub": "Apoios para negócios em Portugal. Encontro o programa certo, trato da candidatura, acompanho até ao pagamento.", "badge": "Equipamento · contratação · energia · digital", "cta": "Verificar o meu negócio", "more": "Também faço:", "m1": "Cooperativa: imóveis na Madeira a partir de 5 000 €", "m2": "Da ideia a um produto digital vivo", "who": "35 anos em negócios reais", "save": "Guardar contacto", "personal": "Cartão pessoal →", "hub": "Projetos do estúdio", "share": "Partilhar contacto", "copied": "Ligação copiada", "chL": "Canais de avisos", "chS": "prazos e apoios que abrem"}, "en": {"h1": "The State returns up to 80% of your investment", "sub": "Grants for businesses in Portugal. I find the right programme, handle the application, follow it to payment.", "badge": "Equipment · hiring · energy · digital", "cta": "Check my business", "more": "I also do:", "m1": "Cooperative: Madeira property from €5,000", "m2": "From idea to a live digital product", "who": "35 years in real business", "save": "Save contact", "personal": "Personal card →", "hub": "Studio projects", "share": "Share contact", "copied": "Link copied", "chL": "Alert channels", "chS": "deadlines and grants that open"}, "ru": {"h1": "Государство возвращает до 80% ваших инвестиций", "sub": "Субсидии для бизнеса в Португалии. Нахожу нужную программу, оформляю заявку, веду до выплаты.", "badge": "Оборудование · найм · энергетика · digital", "cta": "Проверить мой бизнес", "more": "Ещё я делаю:", "m1": "Кооператив: недвижимость Мадейры от 5 000 €", "m2": "Из идеи — работающий цифровой продукт", "who": "35 лет в реальном бизнесе", "save": "Сохранить контакт", "personal": "Личная карточка →", "hub": "Проекты студии", "share": "Поделиться контактом", "copied": "Ссылка скопирована", "chL": "Каналы оповещений", "chS": "сроки и новые программы"}, "es": {"h1": "El Estado devuelve hasta el 80% de su inversión", "sub": "Ayudas para negocios en Portugal. Encuentro el programa adecuado, tramito la solicitud y la acompaño hasta el pago.", "badge": "Equipos · contratación · energía · digital", "cta": "Verificar mi negocio", "more": "También hago:", "m1": "Cooperativa: inmuebles en Madeira desde 5 000 €", "m2": "De la idea a un producto digital vivo", "who": "35 años en negocios reales", "save": "Guardar contacto", "personal": "Tarjeta personal →", "hub": "Proyectos del estudio", "share": "Compartir contacto", "copied": "Enlace copiado", "chL": "Canales de avisos", "chS": "plazos y ayudas que abren"}, "de": {"h1": "Der Staat erstattet bis zu 80% Ihrer Investition", "sub": "Förderungen für Unternehmen in Portugal. Ich finde das richtige Programm, erledige den Antrag und begleite bis zur Auszahlung.", "badge": "Ausrüstung · Einstellung · Energie · Digital", "cta": "Mein Unternehmen prüfen", "more": "Außerdem:", "m1": "Genossenschaft: Immobilien auf Madeira ab 5 000 €", "m2": "Von der Idee zum lebenden digitalen Produkt", "who": "35 Jahre im realen Geschäft", "save": "Kontakt speichern", "personal": "Persönliche Karte →", "hub": "Studio-Projekte", "share": "Kontakt teilen", "copied": "Link kopiert", "chL": "Info-Kanäle", "chS": "Fristen und neue Programme"}};
 const ORDER = ["pt","en","ru","es","de"];
 const P = new URLSearchParams(location.search);
 let lang = P.get("lang");
@@ -116,7 +134,7 @@ function render(){
     const href=a.getAttribute("href");
     if(href.charAt(0)==="#")return;
     const u=new URL(href,location.href);
-    if(/t\.me|wa\.me|linkedin/.test(u.hostname))return;
+    if(/t\.me|wa\.me|whatsapp\.com|linkedin/.test(u.hostname))return;
     u.searchParams.set("lang",lang);a.href=u.toString();
   });
 }

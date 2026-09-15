@@ -73,6 +73,12 @@ html[data-theme="light"] .badge{color:#0F6E56}
 .foot svg{width:20px;height:20px;opacity:.75}
 .fl{color:var(--tx4);font-size:11px;margin-top:6px;line-height:1.6}
 .fl a{color:var(--tx4)}
+.chlabel{font-size:11px;color:var(--tx4);text-transform:uppercase;letter-spacing:.07em;margin:24px 0 8px}
+.chans{display:flex;gap:8px}
+.chan{flex:1;display:flex;align-items:center;gap:9px;background:var(--card2);border:.5px solid var(--line);border-radius:12px;padding:11px 12px;text-decoration:none;min-width:0}
+.chan>svg{width:18px;height:18px;stroke:var(--tx3);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.chan .k{display:block;font-size:13px;font-weight:600;color:var(--tx)}
+.chan .v{display:block;font-size:10.5px;color:var(--tx4);line-height:1.35}
 </style>
 <link rel="canonical" href="https://i.seedwave.pt/biz/">
 </head>
@@ -143,6 +149,18 @@ html[data-theme="light"] .badge{color:#0F6E56}
 
   <button class="save" id="saveBtn" data-t="save"></button>
 
+
+  <!-- Каналы оповещений. Отдельно от контактов выше: те ведут в личку, эти — подписка. -->
+  <p class="chlabel" data-t="chL"></p>
+  <div class="chans">
+    <a class="chan" href="https://t.me/apoiosmadeira" target="_blank" rel="noopener" title="@apoiosmadeira">
+      <svg viewBox="0 0 24 24"><path d="M15 10l-4 4 6 6 4-16-18 7 4 2 2 6 3-4"/></svg><span><span class="k">Telegram</span><span class="v" data-t="chS"></span></span>
+    </a>
+    <a class="chan" href="https://whatsapp.com/channel/0029VbDHFF8K0IBiiqgMON2K" target="_blank" rel="noopener" title="Apoios Madeira · Prazos">
+      <svg viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg><span><span class="k">WhatsApp</span><span class="v" data-t="chS"></span></span>
+    </a>
+  </div>
+
   <div class="foot">
     <svg viewBox="0 0 100 100" fill="none" stroke="#4E97A3" stroke-width="8" stroke-linecap="round"><path d="M34 20 C64 20 64 74 34 74"/><path d="M18 88 Q28 82 38 88 Q48 94 58 88 Q68 82 78 88"/></svg>
     <div class="fl">
@@ -156,7 +174,7 @@ html[data-theme="light"] .badge{color:#0F6E56}
 
 <script>
 const L = {
-  pt:{sub:"35 anos em negócios reais · Madeira",
+  pt:{chL:"Canais de avisos",chS:"prazos e apoios que abrem",sub:"35 anos em negócios reais · Madeira",
       h1:"Três formas de o seu dinheiro trabalhar na Madeira",
       o1t:"Cooperativa · imóveis a partir de 5 000 €",
       o1d:"Compra coletiva ao abrigo da lei portuguesa. O primeiro imóvel está comprado e a funcionar.",
@@ -166,7 +184,7 @@ const L = {
       o3t:"Da ideia a um produto vivo",
       o3d:"Aplicação, bot, serviço. Semanas em vez de meses, sem equipa própria.",
       save:"Guardar contacto", projects:"Projetos do estúdio", personal:"Cartão pessoal"},
-  en:{sub:"35 years in real business · Madeira",
+  en:{chL:"Alert channels",chS:"deadlines and grants that open",sub:"35 years in real business · Madeira",
       h1:"Three ways to put your money to work in Madeira",
       o1t:"Cooperative · property from €5,000",
       o1d:"Collective purchase under Portuguese law. The first property is bought and running.",
@@ -176,7 +194,7 @@ const L = {
       o3t:"From idea to a live product",
       o3d:"App, bot, service. Weeks instead of months, without your own dev team.",
       save:"Save contact", projects:"Studio projects", personal:"Personal card"},
-  ru:{sub:"35 лет в реальном бизнесе · Мадейра",
+  ru:{chL:"Каналы оповещений",chS:"сроки и новые программы",sub:"35 лет в реальном бизнесе · Мадейра",
       h1:"Три формы, как ваши деньги работают на Мадейре",
       o1t:"Кооператив · недвижимость от 5 000 €",
       o1d:"Коллективная покупка по португальскому праву. Первый объект куплен и работает.",
@@ -186,7 +204,7 @@ const L = {
       o3t:"Из идеи — работающий продукт",
       o3d:"Приложение, бот, сервис. Недели вместо месяцев, без своей команды разработчиков.",
       save:"Сохранить контакт", projects:"Проекты студии", personal:"Личная карточка"},
-  es:{sub:"35 años en negocios reales · Madeira",
+  es:{chL:"Canales de avisos",chS:"plazos y ayudas que abren",sub:"35 años en negocios reales · Madeira",
       h1:"Tres formas de que su dinero trabaje en Madeira",
       o1t:"Cooperativa · inmuebles desde 5 000 €",
       o1d:"Compra colectiva bajo la ley portuguesa. El primer inmueble está comprado y en funcionamiento.",
@@ -196,7 +214,7 @@ const L = {
       o3t:"De la idea a un producto vivo",
       o3d:"Aplicación, bot, servicio. Semanas en vez de meses, sin equipo propio.",
       save:"Guardar contacto", projects:"Proyectos del estudio", personal:"Tarjeta personal"},
-  de:{sub:"35 Jahre im realen Geschäft · Madeira",
+  de:{chL:"Info-Kanäle",chS:"Fristen und neue Programme",sub:"35 Jahre im realen Geschäft · Madeira",
       h1:"Drei Wege, wie Ihr Geld auf Madeira arbeitet",
       o1t:"Genossenschaft · Immobilien ab 5 000 €",
       o1d:"Gemeinsamer Kauf nach portugiesischem Recht. Das erste Objekt ist gekauft und in Betrieb.",
@@ -224,7 +242,7 @@ function render(){
     b.classList.toggle("active", b.dataset.l === lang);
   });
   document.querySelectorAll('a[href^="http"], a[href="../"]').forEach(a=>{
-    if(a.href.indexOf("t.me")>-1||a.href.indexOf("wa.me")>-1||a.href.indexOf("linkedin")>-1) return;
+    if(a.href.indexOf("t.me")>-1||a.href.indexOf("wa.me")>-1||a.href.indexOf("whatsapp.com")>-1||a.href.indexOf("linkedin")>-1) return;
     const u = new URL(a.href, location.href); u.searchParams.set("lang", lang); a.href = u.toString();
   });
 }
