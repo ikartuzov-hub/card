@@ -57,6 +57,11 @@
       "aliases": ["https://apoios.seedwave.dev/igor/"],
       "note": "профиль: кто я в субсидиях"
     },
+    "hub_dubai": {
+      "url": "https://seedwave.pt/hub/project.html?id=dubai-madeira-cooperative",
+      "aliases": [],
+      "note": "Dubai Madeira Cooperative — карточка проекта в Хабе"
+    },
     "dubai": {
       "url": "https://d.seedwave.pt/",
       "aliases": ["https://ikartuzov-hub.github.io/dubai-madeira/", "https://d.seedwave.dev/"],
